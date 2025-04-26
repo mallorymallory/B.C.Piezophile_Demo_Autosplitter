@@ -23,7 +23,7 @@ update
 {
     if(old.lvlstart != current.lvlstart){
         File.AppendAllText(vars.logs, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ":startvar:" + current.lvlstart.ToString() + '\n');
-        if(current.lvlstart == 177844408){
+        if(current.lvlstart >= 177844000 && current.lvlstart < 177845000){
             vars.Setup = true;
             if(vars.IsLoading){
                 vars.IsLoading = false;
@@ -39,7 +39,7 @@ update
             vars.Split = true;
             File.AppendAllText(vars.logs, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ":flagvar:" + current.flags.ToString() + '\n');
         }
-        if(current.lvlstart != 177844408){
+        if(!(current.lvlstart >= 177844000 && current.lvlstart < 177845000)){
             vars.Reset = true;
             vars.IsLoading = true;
             vars.tempvar = true;
